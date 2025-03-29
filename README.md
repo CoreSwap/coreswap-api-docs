@@ -1,7 +1,7 @@
 # coreswap-api-docs
 ## Flow
 [Currencies](#Currencies)  
-[exchange_range](#Exchange_Range)  
+[exchange_range](#Exchange Range)  
 [estimate](#Estimate)  
 [exchange](#Exchange)  
 [status](#Status)   
