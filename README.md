@@ -1,6 +1,6 @@
 # coreswap-api-docs
 ## Flow
-
+[Currencies link](#Currencies)
 ## Endpoints
 https://coreswap.io/api/
 
