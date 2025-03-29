@@ -1,7 +1,7 @@
 # coreswap-api-docs
 ## Flow
 [Currencies](#Currencies)  
-[exchange_range](#Exchange%20Range)  
+[exchange_range](#Exchange_range)  
 [estimate](#Estimate)  
 [exchange](#Exchange)  
 [status](#Status)   
@@ -29,7 +29,7 @@ Returns full list of currencies, each currency object in the format:
 **extraId** - If an extra Id (example memo) is optional for that currency  
 
 
-### Exchange Range
+### Exchange_range
 **GET**
 https://coreswap.io/api/exchange_range
 
