@@ -1,7 +1,13 @@
 # coreswap-api-docs
 ## Flow
-[Currencies link](#Currencies)
+[Currencies](#Currencies)
+[exchange_range](#Exchange%Range)
+[estimate](#estimate)
+[exchange](#exchange)
+[status](#status)
+
 ## Endpoints
+
 https://coreswap.io/api/
 
 ### Currencies
