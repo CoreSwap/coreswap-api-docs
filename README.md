@@ -84,7 +84,6 @@ https://coreswap.io/api/estimate?from_currency=ETH&from_network=ETH&to_currency=
 ```
 
 ##### Response Format:
-Returns min & max of the exchange  
 **from_currency**  
 **from_network**  
 **to_currency**  
@@ -149,21 +148,21 @@ https://coreswap.io/api/exchange
 }
 ```
 
-##### Response Format:
-**id** - ID of the exchange
-**deposit_address** - Our address to send the deposit.
-**deposit_extraId** - extra ID of the deposit address (Null if not required).
-**from_currency** - From currency to deposit
-**from_network** - From network
-**to_currency** - To currency to deposit
-**to_network** - To network
-**to_address** - Address that exchanged coins will be sent
-**to_extraId** - Extra id of the address that coins will be sent (Null if not provided or to_currency does not have)
-**from_amount** - Amount expected to send
-**to_amount** - Amount expected to receive 
-**rate_type** - Rate type of exchange, fixed or float.
-**partner** - Partner UUID who created the exchange
-**time_created** - Date & Time created
+##### Response Format:  
+**id** - ID of the exchange  
+**deposit_address** - Our address to send the deposit.  
+**deposit_extraId** - extra ID of the deposit address (Null if not required).  
+**from_currency** - From currency to deposit  
+**from_network** - From network  
+**to_currency** - To currency to deposit  
+**to_network** - To network  
+**to_address** - Address that exchanged coins will be sent  
+**to_extraId** - Extra id of the address that coins will be sent (Null if not provided or to_currency does not have)  
+**from_amount** - Amount expected to send  
+**to_amount** - Amount expected to receive   
+**rate_type** - Rate type of exchange, fixed or float.  
+**partner** - Partner UUID who created the exchange  
+**time_created** - Date & Time created  
 
 ### status
 **GET**
@@ -200,10 +199,10 @@ https://coreswap.io/api/status?id=da557db84b
 }
 ```
 ##### Response Format:
-Response parameters are the same as /exchange response, with the addition of:
-**status** - Status of the exchange: pending, confirming, processing, sending, complete, refunding, expired
-**inHash** - input hash of the deposit to our our address
-**amount_received** - Amount deposited to our address
-**amount_sent** - Amount sent to the user address
-**outHash** - Out hash to the user address
+Response parameters are the same as /exchange response, with the addition of:  
+**status** - Status of the exchange: pending, confirming, processing, sending, complete, refunding, expired  
+**inHash** - input hash of the deposit to our our address  
+**amount_received** - Amount deposited to our address  
+**amount_sent** - Amount sent to the user address  
+**outHash** - Out hash to the user address  
 
