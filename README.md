@@ -1,7 +1,7 @@
 # coreswap-api-docs
 ## Flow
-[Currencies](#Currencies)  
-[exchange_range](#Exchange_range)  
+[List of Currencies](#list_currencies)  
+[exchange Range](#exchange_range)  
 [estimate](#Estimate)  
 [exchange](#Exchange)  
 [status](#Status)   
@@ -10,9 +10,9 @@
 
 https://coreswap.io/api/
 
-### Currencies
+### list_currencies
 **GET**
-https://coreswap.io/api/currencies
+https://coreswap.io/api/list_currencies
 
 ##### Request parameters:
 None
@@ -29,7 +29,7 @@ Returns full list of currencies, each currency object in the format:
 **extraId** - If an extra Id (example memo) is optional for that currency  
 
 
-### Exchange_range
+### exchange_range
 **GET**
 https://coreswap.io/api/exchange_range
 
@@ -43,13 +43,20 @@ https://coreswap.io/api/exchange_range?from_currency=ETH&from_network=ETH&to_cur
 ##### Response example:
 ```json
 {
-"min_amount":0.00433861,
-"max_amount":252.918
+  "floating_range": {
+    "min_amount": 0.00457666,
+    "max_amount": 252.918
+  },
+  "fixed_range": {
+    "min_amount": 0.01006865,
+    "max_amount": 81.18668
+  }
 }
 ```
 
 ##### Response Format:
 Returns min & max of the exchange  
+**floating_range** (default) & **fixed_range**  
 **min_amount** - min amount of the exchange  
 **max_amount** - max amount of the exchange  
 
@@ -63,7 +70,7 @@ https://coreswap.io/api/estimate
 **to_currency** - ID of the currency from  to  
 **to_network** - Network ID of the currency  to  
 **amount** - Amount from  
-**rate_type** - OPTIONAL: Rate type, "fixed" or empty (or "float")
+**rate_type** - OPTIONAL: Rate type, "fixed" or empty (or "floating")
 ##### Request example:
 https://coreswap.io/api/estimate?from_currency=ETH&from_network=ETH&to_currency=USDT&to_network=TRX&amount=1
 ##### Response example:
@@ -75,7 +82,7 @@ https://coreswap.io/api/estimate?from_currency=ETH&from_network=ETH&to_currency=
 "to_network":"TRX",
 "amount_from":1,
 "amount_to":1895.7228466640001,
-"rate_type":"float",
+"rate_type":"floating",
 "minimum_amount":0.00434541,
 "maximum_amount":252.918,
 "fromextraId":false,
@@ -90,7 +97,7 @@ https://coreswap.io/api/estimate?from_currency=ETH&from_network=ETH&to_currency=
 **to_network**  
 **amount_from** - Amount from  
 **amount_to** - Estimated amount to  
-**rate_type** - OPTIONAL: Rate type, "fixed" or empty (or "float")  
+**rate_type** - OPTIONAL: Rate type, "fixed" or empty (or "floating")  
 **minimum_amount** - payout address  
 **maximum_amount** - OPTIONAL: Refund address if exchange fails  
 **fromextraId** - OPTIONAL: refund extra Id if from currency has extra id  
@@ -109,7 +116,7 @@ https://coreswap.io/api/exchange
 **to_currency**  
 **to_network**  
 **amount** - Amount from  
-**rate_type** - OPTIONAL: Rate type, "fixed" or empty (or "float")  
+**rate_type** - OPTIONAL: Rate type, "fixed" or empty (or "floating")  
 **to_address** - payout address  
 **extraid_to** - OPTIONAL payout extra Id (Only if extra Id require for to currency)  
 **address_refund** - OPTIONAL: Refund address if exchange fails  
@@ -122,7 +129,7 @@ https://coreswap.io/api/exchange
  "to_currency":"USDT",
  "to_network":"TRX",
  "amount":500,
- "rate_type":"float",
+ "rate_type":"floating",
  "to_address":"TT2T17KZhoDu47i2E4FWxfG79zdkEWkU9N",
  "address_refund":"",
  "extraid_refund":""
@@ -142,7 +149,7 @@ https://coreswap.io/api/exchange
     "to_extraId": null,
     "from_amount": 500,
     "to_amount": 488.005706,
-    "rate_type": "float",
+    "rate_type": "floating",
     "partner": "a1f560d7",
     "time_created": "2025-03-29 07:33:04"
 }
@@ -160,7 +167,7 @@ https://coreswap.io/api/exchange
 **to_extraId** - Extra id of the address that coins will be sent (Null if not provided or to_currency does not have)  
 **from_amount** - Amount expected to send  
 **to_amount** - Amount expected to receive   
-**rate_type** - Rate type of exchange, fixed or float.  
+**rate_type** - Rate type of exchange, fixed or floating.  
 **partner** - Partner UUID who created the exchange  
 **time_created** - Date & Time created  
 
@@ -189,7 +196,7 @@ https://coreswap.io/api/status?id=da557db84b
     "to_extraId": null,
     "from_amount": 500,
     "to_amount": 488.005706,
-    "rate_type": "float",
+    "rate_type": "floating",
     "partner": "a1f560d7",
     "time_created": "2025-03-29 07:33:04",
     "inHash": null,
